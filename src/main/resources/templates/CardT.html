@@ -1,0 +1,99 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>少数派</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css"/>
+    <style>
+        .avatar{
+            width: 40px;
+            height: 40px;
+        }
+        p {
+            display: inline;
+        }
+
+        .pic img {
+            height: 100px;
+            width: 200px;
+        }
+
+        .down {
+            margin-top: 20px;
+        }
+
+        .title {
+            font-size: 25px;;
+        }
+
+        .content {
+            padding-top: 17px;
+        }
+
+        .container {
+            width: 800px;
+        }
+
+        .mpic img {
+            height: 150px;;
+            width: 270px;;
+        }
+    </style>
+</head>
+<body>
+<div class="media">
+    <!--<div class="media-heading">-->
+        <!--<div class="container" style="background-color: #292525">-->
+            <!--<div class="navbar-left">-->
+                <!--<img src="img/00.png">-->
+            <!--</div>-->
+            <!--<div class="navbar-right">-->
+                <!--<img src="img/pencil.png">-->
+                <!--<img src="img/search.png">-->
+                <!--&lt;!&ndash;<img th:src="@{'img/'+${user.avatar}}" class="img-circle avatar ">&ndash;&gt;-->
+                <!--&lt;!&ndash;<span th:text="${user.name}"></span>&ndash;&gt;-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="media-body">
+        <div class="container">
+            <div class="alert alert-success" th:each="cardT:${cardTList}">
+                <div class="top">
+                    <div class="media">
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="media-left">
+                        <div class="title">
+                            <p th:text="${cardT.title}"></p>
+                        </div>
+                    </div>
+                    <div class="media-right">
+                        <div>
+                            <div class="pic">
+                                <img th:src="@{${cardT.picture}}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="media-body">
+        <div class="b" style="width: 300px">
+            <div class="alert alert-success" th:each="cardT:${cardTList}">
+                <div class="mpic">
+                    <img th:src="@{${cardT.picture2}}">
+                </div>
+                <div>
+                    <div class="title">
+                        <p th:text="${cardT.title2}" }></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
