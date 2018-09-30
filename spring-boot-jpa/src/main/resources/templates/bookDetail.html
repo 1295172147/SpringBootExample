@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="zh-CN">
+<head>
+    <script type="text/javascript" th:src="@{https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js}"></script>
+    <link th:href="@{https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet"/>
+    <meta charset="UTF-8"/>
+    <title>书籍详情</title>
+</head>
+<body>
+<div class="media">
+    <div class="media-body">
+        <div class="container">
+            <div style="margin-left: -70px">
+                <img src="/img/001.png">
+            </div>
+            <img th:src="@{${book.bookCover}}">
+            <!--<p th:text="${Book.bookCover}"></p>-->
+            <p th:text="${book.bookName}"></p>
+            <p th:text="${book.bookAuther}"></p>
+            <p th:text="${book.bookIntroduce}"></p>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

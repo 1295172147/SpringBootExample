@@ -1,0 +1,67 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="zh-CN">
+<head>
+    <script type="text/javascript" th:src="@{https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js}"></script>
+    <link th:href="@{https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet"/>
+    <meta charset="UTF-8"/>
+    <title>书籍列表</title>
+    <style>
+        p{
+            display: inline;
+        }
+        down{
+             margin-top: 20px;
+         }
+        title{
+            font-size: 25px;;
+        }
+        content{
+            padding-top: 17px;
+        }
+        container{
+            width: 800px;
+        }
+        bookCover{
+            height: 150px;;
+            width: 270px;;
+        }
+    </style>
+</head>
+
+<body>
+<div class="media">
+    <div class="media-body">
+        <div class="container">
+            <div style="margin-left: -70px">
+                <img src="/img/000.png">
+            </div>
+            <div class="alert alert-success" th:each="Book:${bookList}">
+                <div class="top">
+                    <div class="media">
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="media-left">
+                        <div>
+                            <div class="pic">
+                                <img th:src="@{${Book.bookCover}}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="media-right">
+                        <div class="title">
+                            <a th:href="@{/book/{bookId}(bookId=${Book.id})}" th:text="${Book.bookName}"></a>
+                        </div>
+                        <div class="content">
+                            <p th:text="${Book.bookIntroduce}">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
